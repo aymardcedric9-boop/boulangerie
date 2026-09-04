@@ -1,0 +1,863 @@
+/* =========================================================
+   LA FOURNÉE DORÉE - STYLE BRACE FINAL
+   Couleurs: #0a0a0a / #f5f1eb / #ff6a2b
+   Polices: Instrument Serif + Space Grotesk
+   Icones: Font Awesome ONLY
+========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap");
+
+:root {
+  --bg: #0a0a0a;
+  --bg2: #141414;
+  --bg3: #1c1c1c;
+  --paper: #f5f1eb;
+  --paper2: rgba(245, 241, 235, 0.6);
+  --orange: #ff6a2b;
+  --line: rgba(255, 255, 255, 0.08);
+  --rec: #ff3b3b;
+  --radius: 14px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--bg);
+  color: var(--paper);
+  font-family: "Space Grotesk", sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h2 {
+  font-family: "Instrument Serif", serif;
+  font-size: 42px;
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* UTILS */
+.label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  opacity: 0.4;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.label::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--orange);
+  display: inline-block;
+}
+.label.light {
+  color: var(--paper);
+  opacity: 0.7;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  background: var(--paper);
+  color: #000;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background: var(--orange);
+  color: #fff;
+}
+.btn.white {
+  background: var(--paper);
+  color: #000;
+}
+.btn.full {
+  width: 100%;
+}
+.btn.center {
+  margin: 40px auto 0;
+  display: flex;
+  width: max-content;
+}
+.section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-heading h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;.section-heading .label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .section-heading {
+    margin-bottom: 22px !important;
+    padding: 0 16px;
+  }
+  .section-heading h2 {
+    font-size: 20px !important;
+    line-height: 1.2 !important;
+  }
+  .section-heading h2::after {
+    width: 30px !important;
+    margin: 8px auto 0 !important;
+  }
+  .section-heading p {
+    font-size: 13px !important;
+  }
+}
+  background: var(--orange);
+  margin: 12px auto 0;
+}
+.section-heading p {
+  margin-top: 12px;
+  opacity: 0.6;
+  font-size: 14px;
+}
+ 
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+  z-index: 100;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+.logo b {
+  display: block;
+  font-family: "Instrument Serif";
+  font-size: 16px;
+  color: #f0b85d;
+  line-height: 1;
+}
+.logo em {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 3px;
+  opacity: 0.6;
+  font-style: normal;
+  margin-top: 3px;
+}
+.desktop-nav {
+  display: flex;
+  gap: 28px;
+  font-size: 12px;
+}
+.desktop-nav a {
+  font-family: "Monsterrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.6;
+  transition: 0.25s;
+  position: relative;
+  padding: 24px 0;
+}
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 18px;
+  width: 0;
+  height: 1px;
+  background: var(--orange);
+  transition: 0.25s;
+}
+.desktop-nav a:hover,
+.desktop-nav a.active {
+  opacity: 1;
+  color: #f0b85d;
+}
+.desktop-nav a:hover::after,
+.desktop-nav a.active::after {
+  width: 100%;
+}
+.header-actions {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hamburger {
+  display: none;
+  width: 32px;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.hamburger span {
+  height: 3px;
+  background: #fff;
+  border-radius: 10px;
+  display: block;
+  transition: 0.3s;
+}
+
+/* SIDEBAR MOBILE */
+#menu-toggle {
+  display: none;
+}
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.35s;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 310px;
+  max-width: 85vw;
+  height: 100vh;
+  background: #111;
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: 0.4s cubic-bezier(0.8, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 20px 0 60px rgba(0, 0, 0, 0.5);
+}
+#menu-toggle:checked ~ .sidebar {
+  transform: translateX(0);
+}
+#menu-toggle:checked ~ .sidebar-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+.sidebar-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--line);
+}
+.sidebar-close {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  cursor: pointer;
+}
+.sidebar-nav {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+.sidebar-nav a i {
+  width: 22px;
+  text-align: center;
+  opacity: 0.7;
+}
+.sidebar-nav a:hover {
+  background: var(--bg2);
+  color: var(--orange);
+}
+
+/* HERO CINEMATIC - GESTION VIDEO */
+#hero-wrap {
+  height: 500vh;
+  position: relative;
+}
+.hero-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+#hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85) contrast(1.1);
+}
+.hud {
+  position: absolute;
+  inset: 0;
+  margin: 18px;
+  border: 1px solid var(--line);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 2;
+}
+.hud-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+.rec {
+  color: var(--rec);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dot {
+  width: 7px;
+  height: 7px;
+  background: var(--rec);
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.hero-content {
+  max-width: 640px;
+  pointer-events: auto;
+}
+.hero-content h1 {
+  font-family: "Instrument Serif";
+  font-size: 62px;
+  line-height: 0.9;
+  margin: 14px 0 18px;
+}
+.hero-content h1 i {
+  color: var(--orange);
+  font-style: italic;
+}
+.hero-line {
+  width: 80px;
+  height: 1px;
+  background: var(--orange);
+  margin: 18px 0;
+}
+.hero-content p {
+  opacity: 0.7;
+  line-height: 1.7;
+  font-size: 15px;
+  margin-bottom: 26px;
+  max-width: 480px;
+}
+
+/* SECTIONS */
+.sec {
+  padding: 80px 5%;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+.sec.dark {
+  background: var(--bg2);
+}
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  margin-top: 30px;
+}
+.grid4.no-line {
+  background: transparent;
+  gap: 24px;
+}
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  margin-top: 30px;
+}
+
+
+/* ===== PATCH PRODUITS POPULAIRES - Ne casse pas ta grille ===== */
+#produits .grid3 .product {
+  position: relative;
+  overflow: hidden; /* indispensable pour le zoom chic */
+  background: var(--bg);
+  will-change: transform;
+  cursor: pointer;
+}
+
+#produits .product img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: none; /* on laisse GSAP gérer */
+  will-change: transform;
+}
+
+#produits .product-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+  z-index: 2;
+}
+
+/* Pour que le JS que je t'ai donné marche à 100% */
+#produits .section-heading {
+  will-change: transform, opacity;
+}
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ===== PATCH A PROPOS - pour l'animation ===== */
+#apropos .about-img {
+  overflow: hidden;
+  position: relative;
+  will-change: clip-path;
+}
+
+#apropos .about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+
+#apropos .label, #apropos h2, #apropos p {
+  will-change: transform, opacity;
+}
+
+.card {
+  background: var(--bg2);
+  border-radius: 0;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+.card-img {
+  height: 200px;
+  overflow: hidden;
+}
+.card-img img {
+  height: 100%;
+  transition: 0.6s;
+}
+.card:hover .card-img img {
+  transform: scale(1.06);
+}
+.card-icon {
+  position: absolute;
+  top: 172px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 52px;
+  background: var(--bg);
+  border: 3px solid var(--bg);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--orange);
+}
+.card h3 {
+  font-family: "Instrument Serif";
+  font-size: 18px;
+  margin: 34px 0 8px;
+}
+.card p {
+  opacity: 0.6;
+  font-size: 13px;
+  padding: 0 16px 22px;
+  line-height: 1.5;
+}
+.why {
+  text-align: center;
+  padding: 10px 20px;
+  border-right: 1px dotted #333;
+}
+.grid4.no-line .why {
+  border: none;
+  background: var(--bg3);
+  padding: 28px;
+  border: 1px solid var(--line);
+}
+.why h3 {
+  font-family: "Instrument Serif";
+  font-size: 18px;
+  margin: 14px 0 8px;
+}
+.why p {
+  opacity: 0.6;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 14px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--orange);
+  font-size: 20px;
+}
+
+/* === PATCH LA FOURNÉE DORÉE - NE CASSE RIEN === */
+#avantages .why {
+  will-change: transform, opacity;
+  transition: border-color 0.3s ease;
+  /* Pour que le hover GSAP soit fluide */
+  transform-style: preserve-3d;
+}
+
+#avantages .why .icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--bg3);
+  border: 1px solid var(--line);
+  transition: background 0.3s, color 0.3s;
+  will-change: transform;
+}
+
+#avantages .why .icon i {
+  font-size: 22px;
+  color: #C5A059; /* Or de La Fournée Dorée */
+}
+
+/* Effet de base si GSAP ne charge pas */
+#avantages .why:hover {
+  border-color: #C5A059 !important;
+}
+
+.product {
+  background: var(--bg3);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.product img {
+  height: 165px;
+}
+.product-info {
+  padding: 12px;
+  position: relative;
+}
+.product-info h3 {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.product-info strong {
+  color: var(--orange);
+  font-size: 13px;
+}
+.product-info button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--orange);
+  color: #fff;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.about-img {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.about-img img {
+  height: 360px;
+}
+.masonry {
+  columns: 3;
+  column-gap: 14px;
+  margin-top: 30px;
+}
+.masonry img {
+  margin-bottom: 14px;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+.masonry img:hover {
+  transform: scale(1.02);
+}
+.review {
+  background: var(--bg3);
+  border: 1px solid var(--line);
+  padding: 24px;
+  border-radius: 10px;
+}
+.quote {
+  font-family: "Instrument Serif";
+  font-size: 56px;
+  color: var(--orange);
+  line-height: 0.4;
+  margin-bottom: 12px;
+}
+.review p {
+  font-size: 13px;
+  line-height: 1.6;
+  min-height: 50px;
+}
+.author {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  align-items: center;
+}
+.avatar {
+  width: 38px;
+  height: 38px;
+  background: #222;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+.stars {
+  color: var(--orange);
+  font-size: 11px;
+  margin-top: 4px;
+}
+.contact {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--bg3);
+  padding: 20px;
+  border: 1px solid var(--line);
+}
+.contact b {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+.contact p {
+  opacity: 0.7;
+  font-size: 12px;
+}
+.footer {
+  background: #120800;
+  color: #d6c5bb;
+}
+.footer-bottom {
+  padding: 16px 5%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #2a1a11;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .grid4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+  .about-img img {
+    height: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .header {
+    padding: 0 4%;
+  }
+  .grid4,
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
+  .why {
+    border-right: none;
+    border-bottom: 1px dotted #333;
+  }
+  .hero-content h1 {
+    font-size: 38px;
+  }
+  .hero-content p {
+    font-size: 14px;
+  }
+  #hero-wrap {
+    height: 380vh;
+  }
+  .masonry {
+    columns: 1;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  .sec {
+    padding: 60px 5%;
+  }
+}
+#galerie{
+  overflow: hidden;
+}
+.gallery-track-wrap{
+  overflow: hidden;
+  width: 100%;
+}
+.gallery-track{
+  display: flex;
+  gap: 15px;
+  width: max-content;
+  animation: scroll 15s linear infinite;
+}
+.gallery-track img{
+width: 300px;
+height: 200px;
+object-fit: cover;
+border-radius: 12px;
+flex-shrink: 0;
+}
+@keyframes scroll{
+  from{transform: translateX(5px);}
+  to{transform: translateX(-15px);}
+}
+
+/* FIX GALERIE MOBILE - IMAGES PLUS PETITES + SENS INVERSÉ */
+@media (max-width: 768px) {
+  .sec {
+    padding: 40px 5% !important;
+  }
+  #galerie {
+    overflow: hidden !important;
+  }
+  .gallery-track {
+    gap: 10px !important;
+    animation: scroll 20s linear infinite reverse !important;
+  }
+  .gallery-track img {
+    width: 95px !important;
+    height: 95px !important;
+    border-radius: 10px !important;
+  }
+}
+
+
+/* === CSS FINAL POUR TON HTML EXACT === */
+
+/* Sur PC on cache le burger */
+.hamburger { display: none; cursor: pointer; }
+.hamburger span { display: block; width: 22px; height: 2px; background: white; margin: 4px 0; border-radius: 2px; }
+#menu-toggle { display: none; }
+
+/* Sidebar footer en bas */
+.sidebar-footer {
+  margin-top: auto;
+  padding: 20px;
+  border-top: 1px solid #222;
+}
+.btn-commander-sidebar {
+  display: block;
+  background: white;
+  color: black;
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* Ouverture du menu */
+#menu-toggle:checked ~ .sidebar { transform: translateX(0) !important; }
+#menu-toggle:checked ~ .sidebar-overlay { opacity: 1 !important; visibility: visible !important; }
+
+/* ===== MOBILE : ON MET TOUT DANS LE MENU ===== */
+@media (max-width: 768px) {
+  /* Header clean : LOGO + BURGER */
+  header.header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 12px 16px !important;
+  }
+  .desktop-nav { display: none !important; }
+  .header-actions .btn { display: none !important; } /* On cache COMMAND du header */
+
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+  }
+}

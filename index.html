@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Fournée Dorée | Boulangerie Artisanale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Playfair+Display:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="sidebar-overlay"></label>
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo"><img src="logo.jpg"><div><b>LA FOURNÉE DORÉE</b><em>BOULANGERIE</em></div></div>
+    <label for="menu-toggle" class="sidebar-close"><i class="fa-solid fa-xmark"></i></label>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="#accueil"><i class="fa-solid fa-house"></i> Accueil</a>
+    <a href="#avantages"><i class="fa-solid fa-check"></i> Avantages</a>
+    <a href="#specialites"><i class="fa-solid fa-bread-slice"></i> Spécialités</a>
+    <a href="#pourquoi"><i class="fa-solid fa-star"></i> Pourquoi nous</a>
+    <a href="#produits"><i class="fa-solid fa-bag-shopping"></i> Produits populaires</a>
+    <a href="#apropos"><i class="fa-solid fa-fire"></i> À propos</a>
+    <a href="#galerie"><i class="fa-solid fa-images"></i> Galerie</a>
+    <a href="#avis"><i class="fa-solid fa-quote-left"></i> Avis clients</a>
+    <a href="#contact"><i class="fa-solid fa-location-dot"></i> Contact</a>
+  </nav>
+  <div class="sidebar-footer">
+    <a href="#commander" class="btn-commander-sidebar"><i class="fa-solid fa-bag-shopping">Commander</i></a>
+  </div>
+</aside>
+
+<header class="header">
+  <a href="#accueil" class="logo"><img src="logo/logo.png"><div><b>LA FOURNÉE DORÉE</b><em>BOULANGERIE ARTISANALE</em></div></a>
+  <nav class="desktop-nav">
+    <a href="#accueil">Accueil</a>
+    <a href="#specialites">Spécialités</a>
+    <a href="#produits">Produits</a>
+    <a href="#apropos">À propos</a>
+    <a href="#pourquoi">Pourquoi</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="header-actions">
+    <a href="#produits" class="btn"><i class="fa-solid fa-bag-shopping"></i> COMMANDER</a>
+    <label for="menu-toggle" class="hamburger"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+<!-- 01 HERO -->
+
+<div id="hero-wrap">
+<section class="hero-sticky" id="accueil">
+  <video id="hero-video" autoplay muted playsinline preload="auto" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+    <source src="hero/clip1.mp4" type="video/mp4">
+  </video>
+
+  <div class="hud">
+    <div class="hud-top"><span class="rec"><span class="dot"></span> REC</span> • 485° STONE BAKED</div>
+    <div class="hero-content">
+      <div class="kicker">FAIT MAISON AVEC AMOUR</div>
+      <h1>Du pain frais chaque jour,<br>pour <i>votre plaisir.</i></h1>
+      <div class="hero-line"></div>
+      <p>Découvrez nos pains croustillants, nos viennoiseries dorées et nos pâtisseries gourmandes.</p>
+      <a href="#produits" class="btn white"><i class="fa-solid fa-bread-slice"></i> DÉCOUVRIR NOS PRODUITS</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const v = document.getElementById("hero-video");
+    const clips = ["hero/clip1.mp4","hero/clip2.mp4","hero/clip3.mp4"];
+    let n = 0;
+    if(v){
+      v.addEventListener("ended", () => {
+        n = (n + 1) % clips.length;
+        v.src = clips[n];
+        v.play().catch(e=>console.log(e));
+      });
+      v.play().catch(()=>{});
+    }
+  });
+</script>
+
+<!-- 02 AVANTAGES - CETTE SECTION MANQUAIT -->
+<section class="sec" id="avantages">
+  <div class="grid4 no-line">
+    <div class="why"><div class="icon"><i class="fa-solid fa-bread-slice"></i></div><h3>Pain frais tous les jours</h3><p>Préparé chaque matin dans notre fournil.</p></div>
+    <div class="why"><div class="icon"><i class="fa-solid fa-seedling"></i></div><h3>Ingrédients de qualité</h3><p>Nous sélectionnons les meilleurs ingrédients pour vous.</p></div>
+    <div class="why"><div class="icon"><i class="fa-solid fa-heart"></i></div><h3>Fait maison</h3><p>Des recettes artisanales préparées avec passion.</p></div>
+    <div class="why"><div class="icon"><i class="fa-solid fa-people-group"></i></div><h3>Proche de vous</h3><p>Une boulangerie de quartier à votre service.</p></div>
+  </div>
+</section>
+
+<!-- 03 SPECIALITES -->
+<section class="sec dark" id="specialites">
+  <div class="section-heading"><div class="label">NOS SPÉCIALITÉS</div><h2>Nos spécialités</h2><p>Des produits faits maison avec des ingrédients de qualité.</p></div>
+  <div class="grid4">
+    <div class="card"><div class="card-img"><img src="specilaites/pain.jpg" alt="pain"></div><div class="card-icon"><i class="fa-solid fa-bread-slice"></i></div><h3>Pain</h3><p>Du pain frais et croustillant tous les jours.</p></div>
+    <div class="card"><div class="card-img"><img src="specilaites/viennoiserie.jpg" alt="viennoiserie"></div><div class="card-icon"><i class="fa-solid fa-cookie"></i></div><h3>Viennoiseries</h3><p>Croissants, pains au chocolat et plus encore.</p></div>
+    <div class="card"><div class="card-img"><img src="specilaites/gateau.jpg" alt="gateau"></div><div class="card-icon"><i class="fa-solid fa-cake-candles"></i></div><h3>Gâteaux</h3><p>Des gâteaux pour toutes les occasions.</p></div>
+    <div class="card"><div class="card-img"><img src="specilaites/patisserie.jpg" alt="patisserie"></div><div class="card-icon"><i class="fa-solid fa-ice-cream"></i></div><h3>Pâtisseries</h3><p>Des pâtisseries fines et gourmandes.</p></div>
+  </div>
+</section>
+
+<!-- 04 POURQUOI NOUS CHOISIR -->
+<section class="sec" id="pourquoi">
+  <div class="section-heading"><div class="label">POURQUOI NOUS</div><h2>Pourquoi nous choisir ?</h2></div>
+  <div class="grid4 no-line">
+    <div class="why"><div class="icon"><i class="fa-solid fa-wheat-awn"></i></div><h3>Ingrédients de qualité</h3><p>Nous sélectionnons les meilleurs ingrédients pour des produits savoureux et sains.</p></div>
+    <div class="why"><div class="icon"><i class="fa-solid fa-kitchen-set"></i></div><h3>Fait maison</h3><p>Tous nos produits sont préparés chaque jour avec passion et savoir-faire.</p></div>
+    <div class="why"><div class="icon"><i class="fa-solid fa-clock"></i></div><h3>Fraîcheur garantie</h3><p>Du matin jusqu'au soir, nous vous offrons des produits toujours frais.</p></div>
+    <div class="why"><div class="icon"><i class="fa-solid fa-heart"></i></div><h3>Accueil chaleureux</h3><p>Une équipe souriante et à votre écoute dans une ambiance conviviale.</p></div>
+  </div>
+</section>
+
+<!-- 05 PRODUITS POPULAIRES -->
+<section class="sec dark" id="produits">
+  <div class="section-heading"><div class="label">POPULAIRES</div><h2>Nos produits populaires</h2></div>
+  <div class="grid3">
+    <div class="product"><img src="images/baguette.jpg"><div class="product-info"><h3>Baguette Tradition</h3><strong>250 FCFA</strong><button><i class="fa-solid fa-bag-shopping"></i></button></div></div>
+    <div class="product"><img src="images/croissant.jpg"><div class="product-info"><h3>Croissant Pur Beurre</h3><strong>400 FCFA</strong><button><i class="fa-solid fa-bag-shopping"></i></button></div></div>
+    <div class="product"><img src="images/painchocolat.jpg"><div class="product-info"><h3>Pain au Chocolat</h3><strong>450 FCFA</strong><button><i class="fa-solid fa-bag-shopping"></i></button></div></div>
+    <div class="product"><img src="images/tartefraise.jpg"><div class="product-info"><h3>Tarte aux Fraises</h3><strong>3 000 FCFA</strong><button><i class="fa-solid fa-bag-shopping"></i></button></div></div>
+    <div class="product"><img src="images/foret-noire.jpg"><div class="product-info"><h3>Gâteau Forêt-Noire</h3><strong>5 000 FCFA</strong><button><i class="fa-solid fa-bag-shopping"></i></button></div></div>
+    <div class="product"><img src="images/eclair.jpg"><div class="product-info"><h3>Éclair au Chocolat</h3><strong>600 FCFA</strong><button><i class="fa-solid fa-bag-shopping"></i></button></div></div>
+  </div>
+  <a href="#produits" class="btn center">Voir tous nos produits <i class="fa-solid fa-arrow-right"></i></a>
+</section>
+
+<!-- 06 A PROPOS -->
+<section class="sec" id="apropos">
+  <div class="grid2">
+    <div class="about-img"><img src="specilaites/profil.jpg" alt="boulanger"></div>
+    <div><div class="label">À PROPOS</div><h2>À propos de nous</h2><p>La Fournée Dorée est une boulangerie artisanale de quartier qui met un point d'honneur à vous offrir des produits de qualité, préparés chaque jour avec passion.</p><p>Depuis plus de 10 ans, nous régalons nos clients avec du pain frais, des viennoiseries croustillantes et des pâtisseries gourmandes.</p><a href="#contact" class="btn">En savoir plus <i class="fa-solid fa-arrow-right"></i></a></div>
+  </div>
+</section>
+
+<!-- 07 GALERIE -->
+<section class="sec dark" id="galerie">
+  <div class="section-heading"><div class="label">GALERIE</div><h2>Galerie</h2></div>
+  <div class="gallery-track-wrap">
+    <div class="gallery-track">
+      <img src="images/galerie2.jpg" alt="La Fournée Dorée - photo 1" loading="lazy">
+      <img src="images/galerie3.jpg" alt="La Fournée Dorée - photo 2" loading="lazy">
+      <img src="images/galerie4.jpg" alt="La Fournée Dorée - photo 3" loading="lazy">
+      <img src="images/galerie5.jpg" alt="La Fournée Dorée - photo 4" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- 08 AVIS -->
+<section class="sec" id="avis">
+  <div class="section-heading"><div class="label">AVIS CLIENTS</div><h2>Avis de nos clients</h2></div>
+  <div class="grid3">
+    <div class="review"><div class="quote">“</div><p>Le meilleur pain du quartier ! Toujours frais et délicieux. L'accueil est au top.</p><div class="author"><div class="avatar">M</div><div><b>Marie K.</b><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div></div></div>
+    <div class="review"><div class="quote">“</div><p>Les viennoiseries sont excellentes, surtout la qualité des ingrédients.</p><div class="author"><div class="avatar">J</div><div><b>Jean P.</b><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div></div></div>
+    <div class="review"><div class="quote">“</div><p>J'adore leurs gâteaux, ils sont aussi beaux que bons. Je recommande !</p><div class="author"><div class="avatar">F</div><div><b>Fatou S.</b><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div></div></div>
+  </div>
+</section>
+
+<!-- 09 CONTACT -->
+<section class="sec dark" id="contact">
+  <div class="section-heading"><div class="label">CONTACT</div><h2>Contactez-nous</h2></div>
+  <div class="grid4 no-line">
+    <div class="contact"><div class="icon"><i class="fa-solid fa-location-dot"></i></div><div><b>Adresse</b><p>Rue des Boulangers, Abidjan</p></div></div>
+    <div class="contact"><div class="icon"><i class="fa-solid fa-clock"></i></div><div><b>Horaires</b><p>05:00 - 21:00 • 7j/7</p></div></div>
+    <div class="contact"><div class="icon"><i class="fa-solid fa-phone"></i></div><div><b>Téléphone</b><p>+225 07 07 41 86 07</p></div></div>
+    <div class="contact"><div class="icon"><i class="fa-brands fa-whatsapp"></i></div><div><b>WhatsApp</b><p>Commander direct</p></div></div>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-bottom"><span>© 2026 LA FOURNÉE DORÉE</span><span><i class="fa-brands fa-instagram"></i> @lafournée.dorée</span></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
