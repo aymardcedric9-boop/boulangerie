@@ -74,21 +74,6 @@
 </section>
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const v = document.getElementById("hero-video");
-    const clips = ["hero/clip1.mp4","hero/clip2.mp4","hero/clip3.mp4"];
-    let n = 0;
-    if(v){
-      v.addEventListener("ended", () => {
-        n = (n + 1) % clips.length;
-        v.src = clips[n];
-        v.play().catch(e=>console.log(e));
-      });
-      v.play().catch(()=>{});
-    }
-  });
-</script>
 
 <!-- 02 AVANTAGES - CETTE SECTION MANQUAIT -->
 <section class="sec" id="avantages">
