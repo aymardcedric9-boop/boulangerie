@@ -57,7 +57,7 @@
 
 <div id="hero-wrap">
 <section class="hero-sticky" id="accueil">
-<div id="hero-video" style="position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; z-index:-1;">
+<div id="hero-iframe" style="position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; z-index:-1;">
   <iframe src="https://www.youtube.com/embed/GXbPTSSPN0s?autoplay=1&mute=1&loop=1&playlist=GXbPTSSPN0s&controls=0&modestbranding=1&playsinline=1" style="position:absolute; top:50%; left:50%; width:135%; height:135%; transform:translate(-50%,-50%); border:0; pointer-events:none;" allow="autoplay; fullscreen"></iframe>
 </div>
 
@@ -73,8 +73,19 @@
   </div>
 </section>
 </div>
-
-
+  
+<script>
+  const ytClips = ["GXbPTSSPN0s", "6kT3RAbTwmA", "wBIsg7McVyg"];
+  let n = 0;
+  setInterval(() => {
+    n = (n + 1) % ytClips.length;
+    const iframe = document.getElementById("hero-iframe");
+    if(iframe){
+      iframe.src = `https://www.youtube.com/embed/${ytClips[n]}?autoplay=1&mute=1&loop=1&playlist=${ytClips[n]}&controls=0&modestbranding=1&playsinline=1`;
+    }
+  }, 8000);
+</script>
+  
 <!-- 02 AVANTAGES - CETTE SECTION MANQUAIT -->
 <section class="sec" id="avantages">
   <div class="grid4 no-line">
