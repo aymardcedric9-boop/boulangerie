@@ -48,6 +48,47 @@ h2 {
   text-transform: uppercase;
   letter-spacing: -0.02em;
 }
+//style des avantage de chaque carte //
+.why .icon {
+  overflow: hidden;
+}
+
+.why .icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
+
+@media (max-width: 768px) {
+  #avantages .grid4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  #avantages .why {
+    min-width: 0;
+  }
+
+  #avantages .icon {
+    max-width: 100%;
+  }
+
+  #avantages .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 400px) {
+  #avantages .grid4 {
+    gap: 10px;
+  }
+}
+
 
 /* UTILS */
 .label {
